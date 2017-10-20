@@ -1,0 +1,32 @@
+{
+  "name": "front-end-angularjs-example",
+  "version": "1.0.0",
+  "description": "front end - angularjs example",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://luciansr@github.com/luciansr/front-end-angularjs-example.git"
+  },
+  "keywords": [
+    "angularjs",
+    "front",
+    "end",
+    "example",
+    "model",
+    "best",
+    "practices"
+  ],
+  "author": "Lucian Sturião Rodrigues",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luciansr/front-end-angularjs-example/issues"
+  },
+  "homepage": "https://github.com/luciansr/front-end-angularjs-example#readme",
+  "dependencies": {
+    "angular": "^1.6.6",
+    "bootstrap": "^4.0.0-beta.2"
+  }
+}
