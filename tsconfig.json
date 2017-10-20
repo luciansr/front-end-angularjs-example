@@ -1,8 +1,9 @@
 {
-    "src": "src/**/*.ts", 
+    //"src": "src/**/*.ts", 
     "compilerOptions": {
         "target": "es5",
         "module": "commonjs",
         "sourceMap": true
-    }
+    },
+    "compileOnSave": true
 }
