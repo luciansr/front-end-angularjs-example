@@ -1,9 +1,8 @@
 {
-    "files": [
-        "src/teste.ts"
-    ],
+    "src": "src/**/*.ts", 
     "compilerOptions": {
-        "noImplicitAny": true,
-        "target": "es5"
+        "target": "es5",
+        "module": "commonjs",
+        "sourceMap": true
     }
 }
