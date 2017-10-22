@@ -1,2 +1,3 @@
 declare var angular: any;
-angular.module('app', []);
+angular
+    .module(App.Config.MODULE_NAME, []);

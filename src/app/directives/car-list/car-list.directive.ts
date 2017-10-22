@@ -19,7 +19,7 @@ namespace App.Directives.CarList {
 
     angular
         .module(App.Config.MODULE_NAME)
-        .directive('carList', carListDirective)
+        .directive('carList', carListDirective);
 
     function carListDirective(){
         return {
