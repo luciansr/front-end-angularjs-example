@@ -1,11 +1,11 @@
 namespace App.Directives.CarList {
-    export class CarService {
+    export class CarListService {
 
         static $inject: string[] = ['CarDataService'];
 
         constructor(
             private CarDataService: Services.CarDataService
-        ){
+        ) {
 
         }
 
@@ -16,5 +16,9 @@ namespace App.Directives.CarList {
         public add(car: Services.Car) {
             return this.CarDataService.add(car);
         }
-    }    
+    }
+
+    angular
+        .module(App.Config.MODULE_NAME)
+        .service('CarListService', CarListService);
 }

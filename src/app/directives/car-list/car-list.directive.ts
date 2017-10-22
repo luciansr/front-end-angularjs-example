@@ -3,9 +3,9 @@ namespace App.Directives.CarList {
 
         private carList: Services.Car[];
 
-        static $inject: string[] = ['CarService'];
+        static $inject: string[] = ['CarListService'];
         constructor(
-            private CarService: CarService
+            private CarService: CarListService
         ) {
             this.init();
         }
@@ -16,4 +16,18 @@ namespace App.Directives.CarList {
             })
         }
     }
+
+    angular
+        .module(App.Config.MODULE_NAME)
+        .directive('carList', carListDirective)
+
+    function carListDirective(){
+        return {
+            scope: {},
+            controller: CarListDirective,
+            controllerAs: 'carListController',
+            template: '<div>Car List directive</div>'
+            // templateUrl: '/app/directives/car-list/car-list.html'
+        };
+    }    
 }

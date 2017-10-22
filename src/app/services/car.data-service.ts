@@ -9,7 +9,7 @@ namespace App.Services {
                 value: 50000
             }
         ];
-        
+
         static $inject: string[] = ['$q'];
         constructor(
             private $q: any
@@ -42,4 +42,8 @@ namespace App.Services {
             return defer.promise;
         }
     }
+
+    angular
+        .module(App.Config.MODULE_NAME)
+        .service('CarDataService', CarDataService);
 }
