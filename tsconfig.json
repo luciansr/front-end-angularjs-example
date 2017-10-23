@@ -7,6 +7,7 @@
         "src/bower_components"
     ],
     "compilerOptions": {
+        "types": ["angular"],
         "target": "es5",
         "module": "commonjs",
         "sourceMap": true
