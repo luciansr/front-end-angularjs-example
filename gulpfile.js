@@ -11,13 +11,13 @@ gulp.task('run-server', function () {
 });
 
 gulp.task('open-browser', shell.task([
-      'npm run open'
-    ])
+  'npm run open'
+])
 );
 
 gulp.task("compile-ts", shell.task([
-      'tsc'
-    ]));
+  'tsc'
+]));
 
 gulp.task('watch', function () {
   gulp.watch(['src/**/*.ts'], function () {
@@ -26,5 +26,5 @@ gulp.task('watch', function () {
 });
 
 gulp.task('default', shell.task([
-    'gulp run-server | gulp watch'
-  ]));
+  'gulp run-server | gulp watch'
+]));
