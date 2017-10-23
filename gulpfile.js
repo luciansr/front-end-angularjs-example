@@ -1,22 +1,23 @@
 var gulp = require("gulp");
 var shell = require('gulp-shell');
-var webserver = require('gulp-webserver');
 var runSequence = require('run-sequence');
 var webServer = null;
 
 gulp.task('run-server', function () {
-  webServer = gulp.src('.')
-    .pipe(webserver({
-      liveReload: true,
-      directoryListing: false,
-      open: true,
-      fallback: 'src/index.html'
-    }));
+  return gulp.src('src/**/*.*', { read: false })
+    .pipe(shell([
+      'http-server ./src | npm run open'
+    ]));
 });
 
-gulp.task('end-server', function () {
-  webServer.emit('kill');
+gulp.task('open-browser', function () {
+  return gulp.src('src/**/*.*', { read: false })
+    .pipe(shell([
+      'npm run open'
+    ]));
 });
+
+
 
 
 gulp.task("compile-ts", function () {
@@ -26,10 +27,18 @@ gulp.task("compile-ts", function () {
     ]))
 
 });
+gulp.task('watch', function () {
+  gulp.watch(['src/**/*.ts'], function () {
+    gulp.src('src/**/*.ts', { read: false })
+    .pipe(shell([
+      'gulp compile-ts'
+    ]))
+  });
+});
 
 gulp.task('default', function () {
-  runSequence('run-server');
-  gulp.watch(['src/**/*'], function () {
-    runSequence('end-server', 'compile-ts', 'run-server');
-  });
+  return gulp.src('src/**/*.*', { read: false })
+  .pipe(shell([
+    'gulp run-server | gulp watch'
+  ]));
 });

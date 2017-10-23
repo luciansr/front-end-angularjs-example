@@ -8,6 +8,7 @@ namespace App.Directives.CarList {
             private CarService: CarListService
         ) {
             this.init();
+            var x = 1;
         }
 
         private init() {
