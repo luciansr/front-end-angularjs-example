@@ -26,8 +26,7 @@ namespace App.Directives.CarList {
             scope: {},
             controller: CarListDirective,
             controllerAs: 'carListController',
-            template: '<div>Car List directive</div>'
-            // templateUrl: '/app/directives/car-list/car-list.html'
+            templateUrl: '/app/directives/car-list/car-list.html'
         };
     }    
 }
