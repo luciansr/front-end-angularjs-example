@@ -6,7 +6,6 @@ namespace App.Directives.CarList {
         constructor(
             private CarDataService: Services.CarDataService
         ) {
-            var x = 2;
         }
 
         public get() {

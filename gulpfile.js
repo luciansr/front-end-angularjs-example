@@ -10,35 +10,21 @@ gulp.task('run-server', function () {
     ]));
 });
 
-gulp.task('open-browser', function () {
-  return gulp.src('src/**/*.*', { read: false })
-    .pipe(shell([
+gulp.task('open-browser', shell.task([
       'npm run open'
-    ]));
-});
+    ])
+);
 
-
-
-
-gulp.task("compile-ts", function () {
-  return gulp.src('src/**/*.ts', { read: false })
-    .pipe(shell([
+gulp.task("compile-ts", shell.task([
       'tsc'
-    ]))
+    ]));
 
-});
 gulp.task('watch', function () {
   gulp.watch(['src/**/*.ts'], function () {
-    gulp.src('src/**/*.ts', { read: false })
-    .pipe(shell([
-      'gulp compile-ts'
-    ]))
+    runSequence('compile-ts');
   });
 });
 
-gulp.task('default', function () {
-  return gulp.src('src/**/*.*', { read: false })
-  .pipe(shell([
+gulp.task('default', shell.task([
     'gulp run-server | gulp watch'
   ]));
-});

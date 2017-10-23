@@ -1,5 +1,11 @@
 {
-    //"src": "src/**/*.ts", 
+    "include": [
+        "src/**/*/*.ts"
+    ],
+    "exclude": [
+        "node_modules",
+        "src/bower_components"
+    ],
     "compilerOptions": {
         "target": "es5",
         "module": "commonjs",
