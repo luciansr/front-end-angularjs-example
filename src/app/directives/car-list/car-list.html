@@ -1,6 +1,6 @@
 <div>
-    <button class="btn btn-default pull-left" ng-click="carListController.newCar()">Novo</button>
-    <button class="btn btn-danger pull-left" ng-click="carListController.deleteCars()">Deletar</button>
+    <button class="btn btn-default btn-new-car" ng-click="carListController.newCar()">Novo Carro</button>
+    <button class="btn btn-danger btn-delete-car" ng-click="carListController.deleteCars()">Excluir Carro</button>
     <table st-table="carListController.carList" class="table table-striped" ng-if="true || carListController.carList">
         <thead>
             <tr>
