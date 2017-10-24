@@ -1,8 +1,7 @@
 namespace App.Directives.CarList {
     export class CarListService {
 
-        static $inject: string[] = ['CarDataService'];
-
+        public static $inject: string[] = ['CarDataService'];
         constructor(
             private CarDataService: Services.CarDataService
         ) {

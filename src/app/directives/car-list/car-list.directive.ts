@@ -3,7 +3,7 @@ namespace App.Directives.CarList {
 
         private carList: Services.Car[];
 
-        static $inject: string[] = ['CarListService'];
+        public static $inject: string[] = ['CarListService'];
         constructor(
             private CarService: CarListService
         ) {
@@ -19,7 +19,7 @@ namespace App.Directives.CarList {
 
     angular
         .module(App.Config.MODULE_NAME)
-        .directive('carList', carListDirective);
+        .directive('lsrCarList', carListDirective);
 
     function carListDirective(){
         return {

@@ -1,2 +1,4 @@
 angular
-    .module(App.Config.MODULE_NAME, []);
+    .module(App.Config.MODULE_NAME, [
+        'ngRoute'
+    ]);
