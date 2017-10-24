@@ -1,5 +1,6 @@
 node_modules
 src/**/*.js
 src/**/*.map
-src/bower_components
 yarn.lock
+src/libs
+src/bundle

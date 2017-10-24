@@ -5,7 +5,9 @@
   "main": "src/index.html",
   "scripts": {
     "open": "opn http://localhost:8080/index.html",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack": "webpack",
+    "develop" : "gulp"
   },
   "repository": "git+https://luciansr@github.com/luciansr/front-end-angularjs-example.git",
   "keywords": [
@@ -30,13 +32,15 @@
     "jquery": "^3.2.1"
   },
   "devDependencies": {
-    "bower": "^1.8.2",
+    "copy-webpack-plugin": "^4.2.0",
     "gulp": "^3.9.1",
     "gulp-shell": "^0.6.3",
     "gulp-watch": "^4.3.11",
     "http-server": "^0.10.0",
     "opn-cli": "^3.1.0",
     "run-sequence": "^2.2.0",
-    "typescript": "^2.5.3"
+    "typescript": "^2.5.3",
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.9.3"
   }
 }

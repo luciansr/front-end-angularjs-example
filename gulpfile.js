@@ -6,25 +6,30 @@ var webServer = null;
 gulp.task('run-server', function () {
   return gulp.src('src/**/*.*', { read: false })
     .pipe(shell([
-      'http-server ./src | npm run open'
+      'http-server ./src'
     ]));
 });
 
 gulp.task('open-browser', shell.task([
-  'npm run open'
-])
-);
+  'yarn open'
+]));
 
 gulp.task("compile-ts", shell.task([
   'tsc'
 ]));
 
+gulp.task("webpack", shell.task([
+  'yarn webpack'
+]));
+
 gulp.task('watch', function () {
   gulp.watch(['src/**/*.ts'], function () {
-    runSequence('compile-ts');
+    runSequence('compile-ts', 'webpack');
   });
 });
 
 gulp.task('default', shell.task([
-  'gulp run-server | gulp watch'
+  'gulp webpack',
+  'gulp open-browser',
+  'gulp watch | gulp run-server'
 ]));
