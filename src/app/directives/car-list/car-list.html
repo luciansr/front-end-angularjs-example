@@ -18,7 +18,7 @@
         <tbody>
             <tr ng-repeat="row in carListController.carList">
                 <td>
-                    <input type="checkbox" ng-click="row.selected = !row.selected" ng-model="row.selected">
+                    <input type="checkbox" ng-model="row.selected">
                 </td>
                 <td>{{row.placa}}</td>
                 <td>{{row.modelo}}</td>

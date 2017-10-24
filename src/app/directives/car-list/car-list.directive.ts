@@ -19,7 +19,7 @@ namespace App.Directives.CarList {
         }
 
         public selectAll() {
-            this.carList.map(c => c.selected = !this.allSelected);
+            this.carList.map(c => c.selected = this.allSelected);
         }
 
         public editCar(placa: string) {
