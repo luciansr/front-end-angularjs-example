@@ -18,9 +18,9 @@
         <tbody>
             <tr ng-repeat="row in carListController.carList">
                 <td>
-                    <input type="checkbox" ng-model="row.selected">
+                    <input type="checkbox" ng-model="row.selected" class="select-row">
                 </td>
-                <td>{{row.placa}}</td>
+                <td ng-click="carListController.editCar(row.placa)">{{row.placa}}</td>
                 <td>{{row.modelo}}</td>
                 <td>{{row.marca}}</td>
                 <td>{{row.imagem ? 'Imagem': 'Sem foto'}}</td>
