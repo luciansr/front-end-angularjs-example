@@ -1,7 +1,8 @@
 namespace App.Directives.CarList {
     export class CarListDirective {
 
-        private carList: Services.Http.Car[];
+        private carList: ListedCar[];
+        private allSelected: boolean;
 
         public static $inject: string[] = ['CarListService', 'LocationService'];
         constructor(
@@ -17,6 +18,10 @@ namespace App.Directives.CarList {
             })
         }
 
+        public selectAll() {
+            this.carList.map(c => c.selected = !this.allSelected);
+        }
+
         public editCar(placa: string) {
             this.LocationService.editCar(placa);
         }
@@ -26,7 +31,7 @@ namespace App.Directives.CarList {
         }
 
         public deleteCars() {
-            this.CarListService.deleteCars([]);
+            this.CarListService.deleteCars(this.carList.filter(c => c.selected).map(c => c.placa));
         }
     }
 

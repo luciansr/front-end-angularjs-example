@@ -1,9 +1,12 @@
 <div>
     <button class="btn btn-default btn-new-car" ng-click="carListController.newCar()">Novo Carro</button>
     <button class="btn btn-danger btn-delete-car" ng-click="carListController.deleteCars()">Excluir Carro</button>
-    <table st-table="carListController.carList" class="table table-striped" ng-if="true || carListController.carList">
+    <table st-table="carListController.carList" class="table table-striped" ng-if="carListController.carList">
         <thead>
             <tr>
+                <th>
+                    <input type="checkbox" ng-click="carListController.selectAll()" ng-model="carListController.allSelected">
+                </th>
                 <th>Placa</th>
                 <th>Modelo</th>
                 <th>Marca</th>
@@ -14,6 +17,9 @@
         </thead>
         <tbody>
             <tr ng-repeat="row in carListController.carList">
+                <td>
+                    <input type="checkbox" ng-click="row.selected = !row.selected" ng-model="row.selected">
+                </td>
                 <td>{{row.placa}}</td>
                 <td>{{row.modelo}}</td>
                 <td>{{row.marca}}</td>

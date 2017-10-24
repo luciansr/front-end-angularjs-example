@@ -9,8 +9,18 @@ namespace App.Directives.CarList {
         ) {
         }
 
-        public get() {
-            return this.CarDataService.get();
+        public get(): ng.IPromise<ListedCar[]> {
+            return this.CarDataService.get().then(cars => {
+                return cars.map(c => <ListedCar>{
+                    combustivel: c.combustivel,
+                    imagem: c.imagem,
+                    marca: c.marca,
+                    modelo: c.modelo,
+                    placa: c.placa,
+                    valor: c.valor,
+                    selected: false
+                });
+            });
         }
 
         public deleteCars(placas: string[]) {
