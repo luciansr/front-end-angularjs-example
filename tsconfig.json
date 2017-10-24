@@ -7,7 +7,7 @@
         "src/bower_components"
     ],
     "compilerOptions": {
-        "types": ["angular"],
+        "types": ["angular", "toastr", "jquery"],
         "target": "es5",
         "module": "commonjs",
         "sourceMap": true

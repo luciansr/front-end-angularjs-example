@@ -1,7 +1,7 @@
 namespace App.Directives.CarList {
     export class CarListDirective {
 
-        private carList: Services.Car[];
+        private carList: Services.Http.Car[];
 
         public static $inject: string[] = ['CarListService'];
         constructor(

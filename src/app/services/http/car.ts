@@ -1,4 +1,4 @@
-namespace App.Services {
+namespace App.Services.Http {
     export interface Car {
         plateNumber: string;
         name: string;

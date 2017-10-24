@@ -11,6 +11,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="./libs/bootstrap.min.css" rel="stylesheet"/>
+    <link href="./libs/toastr.min.css" rel="stylesheet"/>
 
     <!-- Custom styles for this template -->
     <link href="./styles/app.css" rel="stylesheet">
@@ -33,13 +34,13 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="./libs/jquery.min.js"></script>
-    <!-- <script src="./bower_components/popper.js/dist/umd/popper.min.js"></script> -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script> -->
     <script src="./libs/bootstrap.min.js"></script>
+    <script src="./libs/toastr.min.js"></script>
 
     <!-- angular -->
     <script src="./libs/angular.min.js"></script>
     <script src="./libs/angular-route.min.js"></script>
+    <script src="./libs/smart-table.min.js"></script>
 
     <!-- app / env config -->
     <script src="./app/config/app-env.config.js"></script>   
@@ -48,7 +49,8 @@
     <!-- app / config -->
     <script src="./app/config/app-routes.config.js"></script>
     <!-- services -->
-    <script src="./app/services/car.data-service.js"></script>    
+    <script src="./app/services/http/car.data-service.js"></script>    
+    <script src="./app/services/util/log.service.js"></script>  
     <!-- directives -->
     <!-- directive / navbar -->
     <script src="./app/directives/navbar/navbar.directive.js"></script> 

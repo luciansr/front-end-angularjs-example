@@ -1,4 +1,5 @@
-namespace App.Services {
+namespace App.Services.Http {
+    //mocks a data service that connects to an API
     export class CarDataService {
 
         private carMock: Car[] = [
@@ -12,17 +13,22 @@ namespace App.Services {
 
         static $inject: string[] = ['$q'];
         constructor(
-            private $q: any
+            private $q: ng.IQService
         ) {
 
         }
 
-        public get(): Promise<Car[]> {
-            return <any>this.carMock;
+        public get(): ng.IPromise<Car[]> {
+            return this.$q.when(this.carMock);
         }
 
-        public add(car: Car) {
-            this.carMock.push(car);
+        public add(car: Car): ng.IPromise<boolean> {
+            if(this.carMock.filter(c => c.plateNumber == car.plateNumber).length > 0) {
+                return this.$q.reject(false);
+            } else {
+                this.carMock.push(car);
+                return this.$q.when(true);
+            }
         }
 
         public delete(plateNumber: string) {

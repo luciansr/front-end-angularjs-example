@@ -1,3 +1,24 @@
 <div>
     Car list directive
+
+    <table st-table="carListController.carList" class="table table-striped">
+        <thead>
+        <tr>
+            <th>first name</th>
+            <th>last name</th>
+            <th>birth date</th>
+            <th>balance</th>
+            <th>email</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="row in carListController.carList">
+            <td>{{row.plateNumber}}</td>
+            <td>{{row.lastName}}</td>
+            <td>{{row.birthDate}}</td>
+            <td>{{row.balance}}</td>
+            <td>{{row.email}}</td>
+        </tr>
+        </tbody>
+    </table>
 </div>

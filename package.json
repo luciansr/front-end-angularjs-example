@@ -27,10 +27,13 @@
   "homepage": "https://github.com/luciansr/front-end-angularjs-example#readme",
   "dependencies": {
     "@types/angular": "^1.6.34",
+    "@types/toastr": "^2.1.35",
     "angular": "^1.6.6",
     "angular-route": "^1.6.6",
+    "angular-smart-table": "^2.1.8",
     "bootstrap": "^3.3.7",
-    "jquery": "^3.2.1"
+    "jquery": "^3.2.1",
+    "toastr": "^2.1.2"
   },
   "devDependencies": {
     "copy-webpack-plugin": "^4.2.0",
