@@ -41,7 +41,7 @@ namespace App.Services.Http {
         }
 
         public add(car: Car): ng.IPromise<boolean> {
-            if(this.carMockList.filter(c => c.placa == car.placa).length > 0) {
+            if (this.findCarByPlate(car.placa)) {
                 return this.$q.reject(false);
             } else {
                 this.carMockList.push(car);
@@ -49,21 +49,40 @@ namespace App.Services.Http {
             }
         }
 
-        public delete(plateNumber: string) {
-            var defer = this.$q.defer();
+        public delete(placa: string) {
+            var searched = this.findCarByPlate(placa);
 
-            var searched = this.carMockList.filter(c => c.placa == plateNumber);
-
-            if (searched && searched.length > 0) {
-                var index = this.carMockList.indexOf(searched[0]);
+            if (searched) {
+                var index = this.carMockList.indexOf(searched);
                 this.carMockList.splice(index, 1);
 
-                defer.resolve();
+                return this.$q.when();
             } else {
-                defer.reject();
+                this.$q.reject();
             }
+        }
 
-            return defer.promise;
+        public getByPlate(placa: string) {
+            return this.$q.when(this.findCarByPlate(placa));
+        }
+
+        public editCar(car: Car) {
+            var searchedCar = this.findCarByPlate(car.placa);
+
+            if(!searchedCar) return this.$q.reject('NotFound');
+
+            searchedCar.combustivel = car.combustivel;
+            searchedCar.imagem = car.imagem;
+            searchedCar.marca = car.marca;
+            searchedCar.modelo = car.modelo;
+            searchedCar.valor = car.valor;
+
+            return this.$q.when(searchedCar);
+        }
+
+
+        private findCarByPlate(placa: string) {
+            return this.carMockList.filter(c => c.placa == placa)[0];
         }
     }
 

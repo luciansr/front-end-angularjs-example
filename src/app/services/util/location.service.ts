@@ -15,6 +15,10 @@ namespace App.Services.Util {
             this.$location.path('Car/New');
         }
 
+        public listCars() {
+            this.$location.path('CarList');
+        }
+
     }
 
     angular

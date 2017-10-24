@@ -9,14 +9,15 @@ namespace App.Directives.CarEdit {
         ) {
         }
 
-        public get() {
-            return this.CarDataService.get();
+        public getByPlate(placa: string) {
+            return this.CarDataService.getByPlate(placa);
         }
 
         public add(car: Services.Http.Car) {
             return this.CarDataService.add(car).then(
-                response => {
+                data => {
                     this.LogService.success('Carro adicionado com sucesso');
+                    this.LocationService.listCars();
                 },
                 error => {
                     this.LogService.error('Erro ao adicionar carro')
@@ -27,8 +28,15 @@ namespace App.Directives.CarEdit {
             this.CarDataService.delete(plateNumber);
         }
 
-        public editCar(placa: string) {
-            this.LocationService.editCar(placa);
+        public editCar(car: Services.Http.Car) {
+            return this.CarDataService.editCar(car).then(
+                data => {
+                    this.LogService.success('Carro editado com sucesso');
+                    this.LocationService.listCars();
+                },
+                error => {
+                    this.LogService.error('Erro ao editar carro');
+                });
         }
     }
 

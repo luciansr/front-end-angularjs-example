@@ -1,4 +1,4 @@
-<div>
+<div class="lsr-view-container">
     <button class="btn btn-default btn-new-car" ng-click="carListController.newCar()">Novo Carro</button>
     <button class="btn btn-danger btn-delete-car" ng-click="carListController.deleteCars()">Excluir Carro</button>
     <table st-table="carListController.carList" class="table table-striped" ng-if="carListController.carList">
@@ -30,7 +30,7 @@
         </tbody>
         <tfoot>
             <tr>
-                <td colspan="5" class="text-center">
+                <td colspan="7" class="text-center">
                     <div st-pagination="" st-items-by-page="5" st-displayed-pages="7"></div>
                 </td>
             </tr>
