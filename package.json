@@ -27,6 +27,7 @@
   "homepage": "https://github.com/luciansr/front-end-angularjs-example#readme",
   "dependencies": {
     "@types/angular": "^1.6.34",
+    "@types/angular-route": "^1.3.4",
     "@types/toastr": "^2.1.35",
     "angular": "^1.6.6",
     "angular-route": "^1.6.6",

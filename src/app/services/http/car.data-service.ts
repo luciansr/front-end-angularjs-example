@@ -2,12 +2,30 @@ namespace App.Services.Http {
     //mocks a data service that connects to an API
     export class CarDataService {
 
-        private carMock: Car[] = [
+        private carMockList: Car[] = [
             {
-                image: '',
-                name: 'First Car',
-                plateNumber: 'AAA-2112',
-                value: 50000
+                combustivel: 'Flex',
+                imagem: null,
+                marca: 'Volkswagem',
+                modelo: 'Gol',
+                placa: 'FFF-5498',
+                valor: 20000,
+            },
+            {
+                combustivel: 'Gasolina',
+                imagem: null,
+                marca: 'Volkswagem',
+                modelo: 'Fox',
+                placa: 'FOX-4125',
+                valor: 20000,
+            },
+            {
+                combustivel: 'Alcool',
+                imagem: 'http://carros.ig.com.br/fotos/2010/290_193/Fusca2_290_193.jpg',
+                marca: 'Volkswagem',
+                modelo: 'Fusca',
+                placa: 'PAI-4121',
+                valor: 20000,
             }
         ];
 
@@ -19,14 +37,14 @@ namespace App.Services.Http {
         }
 
         public get(): ng.IPromise<Car[]> {
-            return this.$q.when(this.carMock);
+            return this.$q.when(this.carMockList);
         }
 
         public add(car: Car): ng.IPromise<boolean> {
-            if(this.carMock.filter(c => c.plateNumber == car.plateNumber).length > 0) {
+            if(this.carMockList.filter(c => c.placa == car.placa).length > 0) {
                 return this.$q.reject(false);
             } else {
-                this.carMock.push(car);
+                this.carMockList.push(car);
                 return this.$q.when(true);
             }
         }
@@ -34,11 +52,11 @@ namespace App.Services.Http {
         public delete(plateNumber: string) {
             var defer = this.$q.defer();
 
-            var searched = this.carMock.filter(c => c.plateNumber == plateNumber);
+            var searched = this.carMockList.filter(c => c.placa == plateNumber);
 
             if (searched && searched.length > 0) {
-                var index = this.carMock.indexOf(searched[0]);
-                this.carMock.splice(index, 1);
+                var index = this.carMockList.indexOf(searched[0]);
+                this.carMockList.splice(index, 1);
 
                 defer.resolve();
             } else {

@@ -1,24 +1,33 @@
 <div>
-    Car list directive
-
-    <table st-table="carListController.carList" class="table table-striped">
+    <button class="btn btn-default pull-left" ng-click="carListController.newCar()">Novo</button>
+    <button class="btn btn-danger pull-left" ng-click="carListController.deleteCars()">Deletar</button>
+    <table st-table="carListController.carList" class="table table-striped" ng-if="true || carListController.carList">
         <thead>
-        <tr>
-            <th>first name</th>
-            <th>last name</th>
-            <th>birth date</th>
-            <th>balance</th>
-            <th>email</th>
-        </tr>
+            <tr>
+                <th>Placa</th>
+                <th>Modelo</th>
+                <th>Marca</th>
+                <th>Foto</th>
+                <th>Combustível</th>
+                <th>Valor</th>
+            </tr>
         </thead>
         <tbody>
-        <tr ng-repeat="row in carListController.carList">
-            <td>{{row.plateNumber}}</td>
-            <td>{{row.lastName}}</td>
-            <td>{{row.birthDate}}</td>
-            <td>{{row.balance}}</td>
-            <td>{{row.email}}</td>
-        </tr>
+            <tr ng-repeat="row in carListController.carList">
+                <td>{{row.placa}}</td>
+                <td>{{row.modelo}}</td>
+                <td>{{row.marca}}</td>
+                <td>{{row.imagem ? 'Imagem': 'Sem foto'}}</td>
+                <td>{{row.combustivel}}</td>
+                <td>{{row.valor}}</td>
+            </tr>
         </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="5" class="text-center">
+                    <div st-pagination="" st-items-by-page="5" st-displayed-pages="7"></div>
+                </td>
+            </tr>
+        </tfoot>
     </table>
 </div>

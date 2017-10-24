@@ -1,8 +1,10 @@
 namespace App.Services.Http {
     export interface Car {
-        plateNumber: string;
-        name: string;
-        value: number;
-        image: string;
+        combustivel: string;
+        imagem: string;
+        marca: string;
+        modelo: string;
+        placa: string;
+        valor: number;
     }
 }

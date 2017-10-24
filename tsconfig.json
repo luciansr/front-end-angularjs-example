@@ -3,14 +3,16 @@
         "src/**/*/*.ts"
     ],
     "exclude": [
-        "node_modules",
-        "src/bower_components"
+        "node_modules"
     ],
     "compilerOptions": {
-        "types": ["angular", "toastr", "jquery"],
+        "types": ["angular", "toastr", "angular-route"],
         "target": "es5",
         "module": "commonjs",
-        "sourceMap": true
+        "sourceMap": true,
+        "lib": [ "dom", "es2015" ],
+        "strict": false,
+        "noImplicitAny": false
     },
     "compileOnSave": true
 }

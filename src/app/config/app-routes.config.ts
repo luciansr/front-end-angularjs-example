@@ -10,6 +10,12 @@ function routeConfig($routeProvider) {
         .when('/CarList', {
             template: '<lsr-car-list></lsr-car-list>'
         })
+        .when('/Car/New', {
+            template: '<lsr-car-edit></lsr-car-edit>'
+        })
+        .when('/Car/:placa', {
+            template: '<lsr-car-edit></lsr-car-edit>'
+        })
         .otherwise({
             redirectTo: '/'
         });

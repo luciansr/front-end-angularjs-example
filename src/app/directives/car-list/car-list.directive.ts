@@ -3,17 +3,30 @@ namespace App.Directives.CarList {
 
         private carList: Services.Http.Car[];
 
-        public static $inject: string[] = ['CarListService'];
+        public static $inject: string[] = ['CarListService', 'LocationService'];
         constructor(
-            private CarService: CarListService
+            private CarListService: CarListService,
+            private LocationService: Services.Util.LocationService
         ) {
             this.init();
         }
 
         private init() {
-            this.CarService.get().then((data) => {
+            this.CarListService.get().then((data) => {
                 this.carList = data;
             })
+        }
+
+        public editCar(placa: string) {
+            this.LocationService.editCar(placa);
+        }
+
+        public newCar() {
+            this.LocationService.newCar();
+        }
+
+        public deleteCars() {
+            this.CarListService.deleteCars([]);
         }
     }
 
@@ -21,12 +34,12 @@ namespace App.Directives.CarList {
         .module(App.Config.MODULE_NAME)
         .directive('lsrCarList', carListDirective);
 
-    function carListDirective(){
+    function carListDirective() {
         return {
             scope: {},
             controller: CarListDirective,
             controllerAs: 'carListController',
             templateUrl: '/app/directives/car-list/car-list.html'
         };
-    }    
+    }
 }

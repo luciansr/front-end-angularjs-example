@@ -30,6 +30,7 @@ gulp.task('watch', function () {
 
 gulp.task('default', shell.task([
   'gulp webpack',
+  'gulp compile-ts',
   'gulp open-browser',
   'gulp watch | gulp run-server'
 ]));
