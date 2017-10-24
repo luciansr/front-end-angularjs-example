@@ -8,7 +8,7 @@ function routeConfig($routeProvider) {
             template: '<lsr-home></lsr-home>'
         })
         .when('/CarList', {
-            templateUrl: '<lsr-car-list></lsr-car-list>'
+            template: '<lsr-car-list></lsr-car-list>'
         })
         .otherwise({
             redirectTo: '/'
