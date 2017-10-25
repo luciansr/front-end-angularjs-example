@@ -1,7 +1,21 @@
 <div class="lsr-view-container">
-    <button class="btn btn-default btn-new-car" ng-click="carListController.newCar()">Novo Carro</button>
-    <button class="btn btn-danger btn-delete-car" ng-click="carListController.deleteCars()">Excluir Carro</button>
-    <table st-table="carListController.carList" class="table table-striped" ng-if="carListController.carList">
+    <div class="row">
+        <div class="col-lg-6">
+            <button class="btn btn-default btn-new-car" ng-click="carListController.newCar()">Novo Carro</button>
+            <button class="btn btn-danger btn-delete-car" ng-click="carListController.deleteCars()">Excluir Carro</button>
+        </div>
+        <div class="col-lg-offset-2 col-lg-4">
+            <div class="input-group">
+                <input type="text" class="form-control" ng-model="searchValue" placeholder="Pesquisar">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button" ng-click="appliedSearch = searchValue">Go!</button>
+                </span>
+            </div>
+        </div>
+
+        <!-- /input-group -->
+    </div>
+    <table st-table="carListController.carList" class="table car-list-table" ng-if="carListController.carList">
         <thead>
             <tr>
                 <th>
@@ -16,7 +30,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="row in carListController.carList">
+            <tr ng-repeat="row in carListController.carList | lsrCarListFilter: appliedSearch">
                 <td>
                     <input type="checkbox" ng-model="row.selected" class="select-row">
                 </td>

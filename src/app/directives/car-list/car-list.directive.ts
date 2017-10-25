@@ -22,6 +22,10 @@ namespace App.Directives.CarList {
             this.carList.map(c => c.selected = this.allSelected);
         }
 
+        public filterCars(input, filter) {
+            return input;
+        }
+
         public editCar(placa: string) {
             this.LocationService.editCar(placa);
         }

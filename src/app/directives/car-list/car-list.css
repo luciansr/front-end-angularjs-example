@@ -1,13 +1,60 @@
 .btn.btn-new-car {
-    float:left;
-    margin: 0 10px 5px 0;
+    float: left;
+    margin: 0 10px 10px 0;
 }
 
 .btn.btn-delete-car {
-    float:left;
+    float: left;
     margin: 0 10px 5px 0;
 }
 
 tr.select-row {
     cursor: pointer;
+}
+
+table.car-list-table thead,
+table.car-list-table tbody {
+    border: 1px solid rgb(210, 220, 228);
+}
+
+table.car-list-table>thead>tr:first-child>th {
+    border-top: 1px solid rgb(210, 220, 228) !important;
+    border-bottom: none !important;
+}
+
+table.car-list-table tbody {
+    /* border: 1px solid black; */
+}
+
+table.car-list-table {
+    border-collapse: separate;
+}
+
+table.car-list-table thead tr:first-child th:first-child {
+    border-top-left-radius: 5px !important;
+    border-left: 1px solid rgb(210, 220, 228) !important;
+    width: 40px;
+    padding: 9px 12px;
+}
+
+table.car-list-table thead tr:first-child th:last-child {
+    border-top-right-radius: 5px !important;
+    border-right: 1px solid rgb(210, 220, 228) !important;
+}
+
+table.car-list-table tbody tr td {
+    border-top: 1px solid rgb(210, 220, 228) !important;
+    padding: 13px;
+}
+
+table.car-list-table tbody tr td:first-child {
+    border-left: 1px solid rgb(210, 220, 228) !important;
+    
+}
+table.car-list-table tbody tr td:last-child {
+    border-right: 1px solid rgb(210, 220, 228) !important;
+}
+
+table.car-list-table tfoot tr td {
+    border-top: 1px solid rgb(210, 220, 228) !important;
 }

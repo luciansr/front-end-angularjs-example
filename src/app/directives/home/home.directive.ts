@@ -1,13 +1,14 @@
 namespace App.Directives.Home {
     export class HomeDirective {
 
-        public static $inject : string[] = [];
+        public static $inject: string[] = ['LocationService'];
         constructor(
+            private LocationService: Services.Util.LocationService
         ) {
-            this.init();
         }
 
-        private init() {
+        public goToCarList() {
+            this.LocationService.listCars();
         }
     }
 
@@ -15,12 +16,12 @@ namespace App.Directives.Home {
         .module(App.Config.MODULE_NAME)
         .directive('lsrHome', homeDirective);
 
-    function homeDirective(){
+    function homeDirective() {
         return {
             scope: {},
             controller: HomeDirective,
             controllerAs: 'homeController',
             templateUrl: '/app/directives/home/home.html'
         };
-    }    
+    }
 }
