@@ -26,7 +26,7 @@ module.exports = {
         Assets.FONTS.map(asset => {
           return {
             from: path.resolve(__dirname, `./node_modules/${asset}`),
-            to: path.resolve(__dirname, './src/libs/fonts')
+            to: path.resolve(__dirname, './src/fonts')
           };
         })
       )

@@ -3,4 +3,5 @@ src/**/*.js
 src/**/*.map
 #yarn.lock
 src/libs
+src/fonts
 src/bundle
