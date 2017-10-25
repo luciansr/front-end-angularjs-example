@@ -9,9 +9,9 @@ const JS = [
     'bootstrap/dist/js/bootstrap.min.js',
     'angular/angular.min.js',
     'angular-route/angular-route.min.js',
-    'toastr/build/toastr.min.js',
     'angular-smart-table/dist/smart-table.min.js',
-    'angular-ui-bootstrap/dist/ui-bootstrap-tpls.js'
+    'angular-ui-bootstrap/dist/ui-bootstrap-tpls.js',
+    'toastr/build/toastr.min.js',
 ];
 const FONTS = [
     'font-awesome/fonts/fontawesome-webfont.eot',
