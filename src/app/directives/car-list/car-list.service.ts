@@ -1,11 +1,12 @@
 namespace App.Directives.CarList {
     export class CarListService {
 
-        public static $inject: string[] = ['CarDataService', 'LogService', 'LocationService'];
+        public static $inject: string[] = ['CarDataService', 'LogService', 'LocationService', '$uibModal'];
         constructor(
             private CarDataService: Services.Http.CarDataService,
             private LogService: Services.Util.LogService,
-            private LocationService: Services.Util.LocationService
+            private LocationService: Services.Util.LocationService,
+            private $uibModal: ng.ui.bootstrap.IModalService
         ) {
         }
 
@@ -18,6 +19,7 @@ namespace App.Directives.CarList {
                     modelo: c.modelo,
                     placa: c.placa,
                     valor: c.valor,
+                    valorLocalizado: c.valor.toLocaleString(),
                     selected: false
                 });
             });
@@ -31,6 +33,22 @@ namespace App.Directives.CarList {
                 error => {
                     this.LogService.error('Erro ao deletar carros')
                 });
+        }
+
+        public showImage(imageUrl: string, placa: string) {
+            this.$uibModal.open({
+                templateUrl: '/app/directives/car-list/image-modal/image-modal.html',
+                controller: 'ImageModalController',
+                controllerAs: 'imageModalController',
+                resolve: {
+                    'imageUrl' : () => {
+                        return imageUrl;
+                    },
+                    'placa' : () => {
+                        return placa;
+                    }
+                }
+            })
         }
     }
 

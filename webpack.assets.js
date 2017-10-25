@@ -1,6 +1,8 @@
 const CSS = [
     'bootstrap/dist/css/bootstrap.min.css',
-    'toastr/build/toastr.min.css'
+    'toastr/build/toastr.min.css',
+    'font-awesome/css/font-awesome.min.css',
+    'angular-ui-bootstrap/dist/ui-bootstrap-csp.css'
 ];
 const JS = [
     'jquery/dist/jquery.min.js',
@@ -9,7 +11,7 @@ const JS = [
     'angular-route/angular-route.min.js',
     'toastr/build/toastr.min.js',
     'angular-smart-table/dist/smart-table.min.js',
-    'font-awesome/css/font-awesome.min.css'
+    'angular-ui-bootstrap/dist/ui-bootstrap-tpls.js'
 ];
 const FONTS = [
     'font-awesome/fonts/fontawesome-webfont.eot',

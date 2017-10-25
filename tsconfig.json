@@ -6,7 +6,7 @@
         "node_modules"
     ],
     "compilerOptions": {
-        "types": ["angular", "toastr", "angular-route"],
+        "types": ["angular", "toastr", "angular-route", "angular-ui-bootstrap"],
         "target": "es5",
         "module": "commonjs",
         "sourceMap": true,

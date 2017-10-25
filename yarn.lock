@@ -8,6 +8,12 @@
   dependencies:
     "@types/angular" "*"
 
+"@types/angular-ui-bootstrap@^0.13.46":
+  version "0.13.46"
+  resolved "https://registry.yarnpkg.com/@types/angular-ui-bootstrap/-/angular-ui-bootstrap-0.13.46.tgz#67b2bc2801cdaec515567840c9d82cc649c34656"
+  dependencies:
+    "@types/angular" "*"
+
 "@types/angular@*", "@types/angular@^1.6.34":
   version "1.6.34"
   resolved "https://registry.yarnpkg.com/@types/angular/-/angular-1.6.34.tgz#05014ffcb0288b36056058b4c9dda9edf580bf4c"
@@ -82,6 +88,10 @@ angular-route@^1.6.6:
 angular-smart-table@^2.1.8:
   version "2.1.8"
   resolved "https://registry.yarnpkg.com/angular-smart-table/-/angular-smart-table-2.1.8.tgz#521f32a465e7334e073c5c1ae093c59c2b8fca50"
+
+angular-ui-bootstrap@^2.5.6:
+  version "2.5.6"
+  resolved "https://registry.yarnpkg.com/angular-ui-bootstrap/-/angular-ui-bootstrap-2.5.6.tgz#23937322ec641a6fbee16498cc32452aa199e7c5"
 
 angular@^1.6.6:
   version "1.6.6"

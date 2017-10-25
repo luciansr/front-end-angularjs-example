@@ -43,6 +43,10 @@ namespace App.Directives.CarList {
 
                 });
         }
+
+        public showImage(imageUrl: string, placa: string) {
+            this.CarListService.showImage(imageUrl, placa);
+        }
     }
 
     angular
