@@ -1,6 +1,6 @@
 node_modules
 src/**/*.js
 src/**/*.map
-yarn.lock
+#yarn.lock
 src/libs
 src/bundle

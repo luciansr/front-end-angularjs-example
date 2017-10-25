@@ -1,12 +1,24 @@
 body {
     padding-top: 5rem;
-  }
-  .starter-template {
+}
+
+.starter-template {
     padding: 3rem 1.5rem;
     text-align: center;
-  }
+}
 
-  .lsr-view-container {
+.lsr-view-container {
     padding: 3rem 1.5rem;
     /* font-family: 'Arial'; */
-  }
+}
+
+.lsr-view-container .btn.lsr-btn-form {
+    float: left;
+    margin: 0 10px 20px 0;
+    padding: 10px 30px
+}
+
+input.ng-dirty.ng-invalid {
+    color: red;
+    border: 1px solid rgba(255, 0, 0, 0.493);
+}

@@ -1,0 +1,9 @@
+lsr-navbar nav.navbar {
+    background-color: #2787e9;
+    border-color: #2787e9;
+    /* color:white; */
+}
+
+lsr-navbar nav.navbar .navbar-brand {
+    color: white;
+}
