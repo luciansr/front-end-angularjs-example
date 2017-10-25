@@ -86,6 +86,11 @@ namespace App.Services.Http {
             }
         }
 
+        public deleteCars(placas : string[]) {
+            this.carMockList = this.carMockList.filter(c => placas.indexOf(c.placa) < 0);
+            return this.$q.when();
+        }
+
         public getByPlate(placa: string) {
             return this.$q.when(this.findCarByPlate(placa));
         }
@@ -93,7 +98,7 @@ namespace App.Services.Http {
         public editCar(car: Car) {
             var searchedCar = this.findCarByPlate(car.placa);
 
-            if(!searchedCar) return this.$q.reject('NotFound');
+            if (!searchedCar) return this.$q.reject('NotFound');
 
             searchedCar.combustivel = car.combustivel;
             searchedCar.imagem = car.imagem;

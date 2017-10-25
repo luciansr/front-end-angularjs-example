@@ -24,7 +24,13 @@ namespace App.Directives.CarList {
         }
 
         public deleteCars(placas: string[]) {
-            this.CarDataService.delete(placas[0]);
+            return this.CarDataService.deleteCars(placas).then(
+                data => {
+                    this.LogService.success('Carros deletados com sucesso')
+                },
+                error => {
+                    this.LogService.error('Erro ao deletar carros')
+                });
         }
     }
 

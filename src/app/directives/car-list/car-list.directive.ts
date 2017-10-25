@@ -35,7 +35,13 @@ namespace App.Directives.CarList {
         }
 
         public deleteCars() {
-            this.CarListService.deleteCars(this.carList.filter(c => c.selected).map(c => c.placa));
+            this.CarListService.deleteCars(this.carList.filter(c => c.selected).map(c => c.placa)).then(
+                data => {
+                    this.init();
+                },
+                errors => {
+
+                });
         }
     }
 

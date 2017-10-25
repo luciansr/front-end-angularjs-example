@@ -38,6 +38,10 @@ namespace App.Directives.CarEdit {
                     this.LogService.error('Erro ao editar carro');
                 });
         }
+
+        public listCars() {
+            this.LocationService.listCars();
+        }
     }
 
     angular

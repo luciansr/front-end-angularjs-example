@@ -31,6 +31,10 @@ namespace App.Directives.CarEdit {
                 this.CarEditService.add(this.car);
             }
         }
+
+        public listCars() {
+            this.CarEditService.listCars();
+        }
     }
 
     angular

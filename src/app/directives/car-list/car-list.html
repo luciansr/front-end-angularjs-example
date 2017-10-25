@@ -1,7 +1,7 @@
 <div class="lsr-view-container">
     <div class="row">
         <div class="col-lg-6">
-            <button class="btn btn-default btn-new-car" ng-click="carListController.newCar()">Novo Carro</button>
+            <button class="btn btn-success btn-new-car" ng-click="carListController.newCar()">Novo Carro</button>
             <button class="btn btn-danger btn-delete-car" ng-click="carListController.deleteCars()">Excluir Carro</button>
         </div>
         <div class="col-lg-offset-2 col-lg-4">
@@ -31,13 +31,18 @@
         </thead>
         <tbody>
             <tr ng-repeat="row in carListController.carList | lsrCarListFilter: appliedSearch">
-                <td>
-                    <input type="checkbox" ng-model="row.selected" class="select-row">
+                <td class="select-td">
+                    <input type="checkbox" ng-model="row.selected">
                 </td>
-                <td ng-click="carListController.editCar(row.placa)">{{row.placa}}</td>
+                <td ng-click="carListController.editCar(row.placa)" class="plate-td">
+                    <a>{{row.placa}}</a>
+                </td>
                 <td>{{row.modelo}}</td>
                 <td>{{row.marca}}</td>
-                <td>{{row.imagem ? 'Imagem': 'Sem foto'}}</td>
+                <td>
+                    <a href="javascript:void(0)" ng-if="row.imagem">Imagem</a>
+                    <span ng-if="!row.imagem">Sem foto</span>
+                </td>
                 <td>{{row.combustivel}}</td>
                 <td>{{row.valor}}</td>
             </tr>

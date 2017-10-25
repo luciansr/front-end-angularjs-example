@@ -1,14 +1,18 @@
 .btn.btn-new-car {
     float: left;
-    margin: 0 10px 10px 0;
+    margin: 0 10px 20px 0;
+    padding: 10px 30px
 }
 
 .btn.btn-delete-car {
     float: left;
-    margin: 0 10px 5px 0;
+    margin: 0 10px 20px 0;
+    padding: 10px 30px
 }
 
-tr.select-row {
+td.select-td,
+td.select-td > input,
+td.plate-td {
     cursor: pointer;
 }
 
@@ -22,9 +26,9 @@ table.car-list-table>thead>tr:first-child>th {
     border-bottom: none !important;
 }
 
-table.car-list-table tbody {
-    /* border: 1px solid black; */
-}
+/* table.car-list-table tbody {
+    /* border: 1px solid black; * /
+} */
 
 table.car-list-table {
     border-collapse: separate;
