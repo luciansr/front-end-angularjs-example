@@ -9,6 +9,7 @@ Front end - AngularJS example
 
  1. yarn install
  2. yarn develop
+ 3. if it don't go automatically, go to http://localhost:8092 on your browser
 
 ## Objective
 
