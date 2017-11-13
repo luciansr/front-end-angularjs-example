@@ -6,7 +6,7 @@ var webServer = null;
 gulp.task('run-server', function () {
   return gulp.src('src/**/*.*', { read: false })
     .pipe(shell([
-      'http-server ./src'
+      'http-server ./src -p 8092'
     ]));
 });
 
@@ -29,8 +29,8 @@ gulp.task('watch', function () {
 });
 
 gulp.task('default', shell.task([
-  'gulp webpack',
   'gulp compile-ts',
+  'gulp webpack',
   'gulp open-browser',
   'gulp watch | gulp run-server'
 ]));

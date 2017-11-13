@@ -4,10 +4,11 @@
   "description": "front end - angularjs example",
   "main": "src/index.html",
   "scripts": {
-    "open": "opn http://localhost:8080/index.html",
+    "open": "opn http://localhost:8092/index.html",
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack": "webpack",
-    "develop": "gulp"
+    "develop": "gulp",
+    "tsc": "gulp compile-ts"
   },
   "repository": "git+https://luciansr@github.com/luciansr/front-end-angularjs-example.git",
   "keywords": [
