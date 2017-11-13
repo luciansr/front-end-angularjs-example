@@ -3,12 +3,12 @@ Front end - AngularJS example
 
 ## Dependency
 
- 1. yarn or npm (nodejs)
+ 1. yarn (install node and npm and then: "npm install -g yarn")
 
 ## How to run project
 
- 1. yarn install or npm install
- 2. yarn develop or npm run develop
+ 1. yarn install
+ 2. yarn develop
 
 ## Objective
 
